@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4426CE5422FD1B8F00192CF3 /* Joke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426CE5322FD1B8F00192CF3 /* Joke.swift */; };
 		4426CE6023003EC600192CF3 /* newTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426CE5F23003EC600192CF3 /* newTableViewCell.swift */; };
+		4426CE6223005D8C00192CF3 /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4426CE6123005D8C00192CF3 /* detailViewController.swift */; };
 		4490E56D22FC05C8006336CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490E56C22FC05C8006336CB /* AppDelegate.swift */; };
 		4490E56F22FC05C8006336CB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4490E56E22FC05C8006336CB /* ViewController.swift */; };
 		4490E57222FC05C8006336CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4490E57022FC05C8006336CB /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		30A9BDE35A8677CE44157D54 /* Pods-MyProjectTestGitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyProjectTestGitUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyProjectTestGitUITests/Pods-MyProjectTestGitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4426CE5322FD1B8F00192CF3 /* Joke.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Joke.swift; sourceTree = "<group>"; };
 		4426CE5F23003EC600192CF3 /* newTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newTableViewCell.swift; sourceTree = "<group>"; };
+		4426CE6123005D8C00192CF3 /* detailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		4490E56922FC05C8006336CB /* MyProjectTestGit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyProjectTestGit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4490E56C22FC05C8006336CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4490E56E22FC05C8006336CB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				4490E56C22FC05C8006336CB /* AppDelegate.swift */,
 				4490E56E22FC05C8006336CB /* ViewController.swift */,
+				4426CE6123005D8C00192CF3 /* detailViewController.swift */,
 				4490E57022FC05C8006336CB /* Main.storyboard */,
 				4426CE5F23003EC600192CF3 /* newTableViewCell.swift */,
 				4490E59A22FC131C006336CB /* ApiManager.swift */,
@@ -400,6 +403,7 @@
 				4490E59B22FC131C006336CB /* ApiManager.swift in Sources */,
 				4426CE5422FD1B8F00192CF3 /* Joke.swift in Sources */,
 				4490E56D22FC05C8006336CB /* AppDelegate.swift in Sources */,
+				4426CE6223005D8C00192CF3 /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

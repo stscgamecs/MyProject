@@ -61,6 +61,10 @@ class ViewController: UIViewController {
 
 extension ViewController:UITableViewDataSource,UITableViewDelegate{
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayUser.count
     }
@@ -72,5 +76,13 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
 //        cell?.labelCell.text = "\(arrayUser[indexPath.row])"
         return cell!
     }
+
     
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            arrayUser.remove(at: indexPath.row)
+            tabelViewShow.deleteRows(at:[indexPath], with: .fade)
+        }
+    }
 }
