@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  DetailNewViewController.swift
 //  MyProjectTestGit
 //
 //  Created by Z64me on 12/8/2562 BE.
@@ -8,15 +8,30 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
 
+
+
+class DetailNewViewController: UIViewController {
+
+    @IBOutlet weak var DateLabel: UILabel!
+    
+    @IBOutlet weak var NameLabel: UILabel!
+    
+    var newDateLabel:String!
+   
+    @IBAction func Btn_BackPage(_ sender: Any) {
+         self.dismiss(animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+       // DateLabel.text = newDateLabel
         // Do any additional setup after loading the view.
     }
     
-
+    func setTitle(title: String,title2: String){
+       DateLabel.text = title
+        NameLabel.text = title2
+    }
     /*
     // MARK: - Navigation
 

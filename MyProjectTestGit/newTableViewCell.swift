@@ -15,7 +15,7 @@ class newTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabelCell: UILabel!
     
     
-    var todoItem: Joke!
+    //var todoItem: Joke!
     
     func setupUI(Joke:Joke){
         labelCell.text = Joke.appeared_at
@@ -27,10 +27,5 @@ class newTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
 
 }

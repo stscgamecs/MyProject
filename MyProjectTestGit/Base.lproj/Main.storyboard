@@ -164,6 +164,51 @@
             </objects>
             <point key="canvasLocation" x="972" y="3"/>
         </scene>
+        <!--Detail New View Controller-->
+        <scene sceneID="OfF-xj-sWr">
+            <objects>
+                <viewController storyboardIdentifier="detailViewID" id="Pvo-rQ-nB1" customClass="DetailNewViewController" customModule="MyProjectTestGit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kgY-52-2UZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fn-bQ-rPQ">
+                                <rect key="frame" x="20" y="198" width="374" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Yk6-EX-5bO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpy-J2-9pA">
+                                <rect key="frame" x="20" y="261" width="374" height="112"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1fn-bQ-rPQ" firstAttribute="leading" secondItem="kgY-52-2UZ" secondAttribute="leadingMargin" id="1hR-eF-7HM"/>
+                            <constraint firstItem="1fn-bQ-rPQ" firstAttribute="trailing" secondItem="hpy-J2-9pA" secondAttribute="trailing" id="C2w-dv-XLa"/>
+                            <constraint firstItem="1fn-bQ-rPQ" firstAttribute="trailing" secondItem="kgY-52-2UZ" secondAttribute="trailingMargin" id="CBH-8X-MZg"/>
+                            <constraint firstItem="1fn-bQ-rPQ" firstAttribute="leading" secondItem="hpy-J2-9pA" secondAttribute="leading" id="Z5f-nj-wHn"/>
+                            <constraint firstItem="hpy-J2-9pA" firstAttribute="top" secondItem="1fn-bQ-rPQ" secondAttribute="bottom" constant="8" symbolic="YES" id="ktT-ES-TPf"/>
+                            <constraint firstItem="1fn-bQ-rPQ" firstAttribute="top" secondItem="Oad-J2-4DD" secondAttribute="top" constant="154" id="sDe-7M-oPD"/>
+                            <constraint firstItem="Oad-J2-4DD" firstAttribute="bottom" secondItem="hpy-J2-9pA" secondAttribute="bottom" constant="489" id="vEg-EM-2wh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Oad-J2-4DD"/>
+                    </view>
+                    <connections>
+                        <outlet property="DateLabel" destination="1fn-bQ-rPQ" id="3cY-Mt-iXk"/>
+                        <outlet property="NameLabel" destination="hpy-J2-9pA" id="ULX-1V-FkT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uu6-FU-oPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5151" y="110"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hoj-vr-Kc4">
             <objects>

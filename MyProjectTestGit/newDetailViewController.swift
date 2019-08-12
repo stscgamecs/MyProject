@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  newDetailViewController.swift
 //  MyProjectTestGit
 //
 //  Created by Z64me on 12/8/2562 BE.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class newDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

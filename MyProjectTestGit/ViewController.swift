@@ -39,16 +39,14 @@ class ViewController: UIViewController {
     @IBAction func btn_Add(_ sender: Any) {
         
         if let newDateLabel = dateLabel.text,let newNamelable = nameLabel.text,!newDateLabel.isEmpty,!newNamelable.isEmpty{
-            let newJoke: Joke = Joke(appeared_at: newDateLabel,tags: [newNamelable])
+        let newJoke: Joke = Joke(appeared_at: newDateLabel,tags: [newNamelable])
             arrayUser.append(newJoke)
             dateLabel.text = nil
             nameLabel.text = nil
             print(arrayUser)
         
-            
             tabelViewShow.reloadData()
-            
-            
+
         }
     }
     
@@ -66,7 +64,9 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(arrayUser.count)
         return arrayUser.count
+        
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tabelViewShow.dequeueReusableCell(withIdentifier: "tablecell") as? newTableViewCell
@@ -84,5 +84,34 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
             arrayUser.remove(at: indexPath.row)
             tabelViewShow.deleteRows(at:[indexPath], with: .fade)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //self.view.backgroundColor = UIColor.red
+        
+        let storyboard = UIStoryboard(name: "Storyboard",bundle: nil)
+        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "detailViewID") as?  DetailNewViewController else{
+            return
+        }
+        
+        let item1 = arrayUser[indexPath.item].appeared_at
+        let item2 = arrayUser[indexPath.item].tags[0]
+        self.present(detailViewController,animated: true){
+            detailViewController.setTitle(title: item1,title2: item2)
+        }
+        
+//        let detail:DetailNewViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailNewViewController") as! DetailNewViewController
+//
+//
+       // detail.newDateLabel = arrayUser[indexPath.row]
+//       let item = arrayUser[indexPath.item].appeared_at
+//
+//        detail.newDateLabel = item
+//
+//    self.navigationController?.pushViewController(detail, animated: true)
+//
+//        self.present(detailViewController,animated: true){
+//            detailViewController.setTitle(title: item)
+//        }
     }
 }
