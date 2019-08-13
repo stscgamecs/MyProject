@@ -13,33 +13,73 @@ import UIKit
 
 class DetailNewViewController: UIViewController {
 
-    @IBOutlet weak var DateLabel: UILabel!
+    @IBOutlet weak var collectionViewData: UICollectionView!
+    @IBOutlet weak var dateLabel: UILabel!
     
-    @IBOutlet weak var NameLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     
-    var newDateLabel:String!
-   
-    @IBAction func Btn_BackPage(_ sender: Any) {
-         self.dismiss(animated: true, completion: nil)
-    }
+    //var newDateLabel:String!
+    
+    
+    private var titleUpdate1: String?
+    private var titleUpdate2: String?
+    let dataImg:[UIImage] = [UIImage(named: "barrafina")!,
+                             UIImage(named: "bourkestreetbakery")!,
+                             UIImage(named: "cafedeadend")!,
+                             UIImage(named: "cafeloisl")!,
+                             UIImage(named: "cafelore")!,
+                             UIImage(named: "cafelore")!]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       // DateLabel.text = newDateLabel
-        // Do any additional setup after loading the view.
+        dateLabel.text = titleUpdate1
+        nameLabel.text = titleUpdate2
     }
     
     func setTitle(title: String,title2: String){
-       DateLabel.text = title
-        NameLabel.text = title2
+        self.titleUpdate1 = title
+        self.titleUpdate2 = title2
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "nextPage",
+            let viewControllor = segue.destination as? ViewControllerShowImg{
+            
+            viewControllor.setImg(img: sender as! UIImage )
+        }
     }
-    */
 
 }
+
+extension DetailNewViewController:UICollectionViewDelegate,UICollectionViewDataSource{
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataImg.count
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let imgRecive = dataImg[indexPath.item]
+        self.performSegue(withIdentifier: "nextPage", sender: imgRecive)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+
+        
+        let cell = collectionViewData.dequeueReusableCell(withReuseIdentifier: "collectionCell", for: indexPath) as? customCollectionViewCell
+        //let img = dataImg[indexPath.row]
+        let name = (nameLabel?.text)!
+        cell?.setItem(img: dataImg[indexPath.item],text: name)
+        
+        return cell!
+    }
+    
+    
+    
+}
+
+

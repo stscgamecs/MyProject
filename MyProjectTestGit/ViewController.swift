@@ -13,10 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
-    
     @IBOutlet weak var tabelViewShow: UITableView!
     var arrayUser:[Joke] = []
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -89,29 +88,30 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         //self.view.backgroundColor = UIColor.red
         
-        let storyboard = UIStoryboard(name: "Storyboard",bundle: nil)
-        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "detailViewID") as?  DetailNewViewController else{
+        let storyboard = UIStoryboard(name: "Main",bundle: nil)
+        
+        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "tableViewDetail") as?  DetailNewViewController else{
             return
         }
-        
+
         let item1 = arrayUser[indexPath.item].appeared_at
         let item2 = arrayUser[indexPath.item].tags[0]
-        self.present(detailViewController,animated: true){
-            detailViewController.setTitle(title: item1,title2: item2)
-        }
         
-//        let detail:DetailNewViewController = self.storyboard?.instantiateViewController(withIdentifier: "DetailNewViewController") as! DetailNewViewController
-//
-//
-       // detail.newDateLabel = arrayUser[indexPath.row]
-//       let item = arrayUser[indexPath.item].appeared_at
-//
-//        detail.newDateLabel = item
-//
-//    self.navigationController?.pushViewController(detail, animated: true)
-//
+        detailViewController.setTitle(title: item1, title2: item2)
+        
+        
+//        detailViewController.title1 = item1
+//        detailViewController.title2 = item2
+       self.navigationController?.pushViewController(detailViewController, animated: true)
+        
+        
 //        self.present(detailViewController,animated: true){
-//            detailViewController.setTitle(title: item)
+//            detailViewController.setTitle(title: item1,title2: item2)
 //        }
+        
+  
+    
+
     }
 }
+
