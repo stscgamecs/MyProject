@@ -12,13 +12,11 @@ class ViewController: UIViewController {
    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
     @IBOutlet weak var tabelViewShow: UITableView!
     var arrayUser:[Joke] = []
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     @IBAction func btn_Get(_ sender: Any) {
@@ -28,13 +26,11 @@ class ViewController: UIViewController {
                     return
                 }
                 self?.nameLabel.text = joke.tags[0]
-                
                 self?.dateLabel.text = joke.appeared_at
-                
             }
         }
-       
     }
+    
     @IBAction func btn_Add(_ sender: Any) {
         
         if let newDateLabel = dateLabel.text,let newNamelable = nameLabel.text,!newDateLabel.isEmpty,!newNamelable.isEmpty{
@@ -45,15 +41,8 @@ class ViewController: UIViewController {
             print(arrayUser)
         
             tabelViewShow.reloadData()
-
         }
     }
-    
-    
-    
-    
-    
-
 }
 
 extension ViewController:UITableViewDataSource,UITableViewDelegate{
@@ -72,22 +61,15 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
         let data = arrayUser[indexPath.row]
         
         cell?.setupUI(Joke: data)
-//        cell?.labelCell.text = "\(arrayUser[indexPath.row])"
         return cell!
     }
-
-    
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete{
             arrayUser.remove(at: indexPath.row)
             tabelViewShow.deleteRows(at:[indexPath], with: .fade)
         }
     }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.view.backgroundColor = UIColor.red
-        
         let storyboard = UIStoryboard(name: "Main",bundle: nil)
         
         guard let detailViewController = storyboard.instantiateViewController(withIdentifier: "tableViewDetail") as?  DetailNewViewController else{
@@ -98,20 +80,7 @@ extension ViewController:UITableViewDataSource,UITableViewDelegate{
         let item2 = arrayUser[indexPath.item].tags[0]
         
         detailViewController.setTitle(title: item1, title2: item2)
-        
-        
-//        detailViewController.title1 = item1
-//        detailViewController.title2 = item2
        self.navigationController?.pushViewController(detailViewController, animated: true)
-        
-        
-//        self.present(detailViewController,animated: true){
-//            detailViewController.setTitle(title: item1,title2: item2)
-//        }
-        
-  
-    
-
     }
 }
 

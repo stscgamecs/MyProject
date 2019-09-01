@@ -14,14 +14,10 @@ class newTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabelCell: UILabel!
     
-    
-    //var todoItem: Joke!
-    
     func setupUI(Joke:Joke){
         labelCell.text = Joke.appeared_at
         nameLabelCell.text = Joke.tags[0]
     }
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
